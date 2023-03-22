@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  opentripplanner:
+    build: .
+    #ports:
+    #  - 3000:8080
+    restart: unless-stopped
+
+networks:
+  default:
+    name: trufi-server
