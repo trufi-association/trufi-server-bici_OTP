@@ -10,7 +10,7 @@ RUN mvn package
 #
 # Package stage
 #
-FROM openjdk:17
+FROM openjdk:19
 COPY --from=build /home/OpenTripPlanner/target/otp-2.3.0-SNAPSHOT-shaded.jar /usr/local/lib/otp.jar
 COPY map /usr/local/lib/data
 EXPOSE 8080
