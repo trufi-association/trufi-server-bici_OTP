@@ -2,8 +2,10 @@
 # Build stage
 #
 FROM maven:3.9.0 AS build
+
 COPY OpenTripPlanner /home/OpenTripPlanner
-RUN mvn -f /home/OpenTripPlanner/pom.xml clean package
+WORKDIR /home/OpenTripPlanner
+RUN mvn package
 
 #
 # Package stage
