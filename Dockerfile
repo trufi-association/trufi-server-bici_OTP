@@ -2,10 +2,9 @@
 # Build stage
 #
 FROM maven:3.9.0 AS build
-
 COPY OpenTripPlanner /home/OpenTripPlanner
 WORKDIR /home/OpenTripPlanner
-RUN mvn package
+RUN mvn -DskipTests=true package
 
 #
 # Package stage
