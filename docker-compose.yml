@@ -1,10 +1,13 @@
 version: '3'
 
 services:
-  opentripplanner:
+  bici-otp:
+    container_name: bici-otp
     build: .
-    #ports:
-    #  - 3000:8080
+    volumes:
+      - ./data:/usr/local/lib/data
+    ports:
+     - 3000:8080
     restart: unless-stopped
 
 networks:
